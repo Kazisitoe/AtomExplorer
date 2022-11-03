@@ -1,0 +1,111 @@
+{
+  "name": "atomexplorer",
+  "displayName": "AtomExplorer",
+  "description": "Explorer UI for Atom Framework",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:atomexplorer.atomRefresh",
+    "onView:atomexplorer.atomRefresh"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "atomexplorer.atomRefresh",
+        "title": "⟳ Refresh"
+      },
+      {
+        "command": "atomexplorer.atomCreate",
+        "title": "Add Script"
+      },
+      {
+        "command": "atomexplorer.atomDelete",
+        "title": "Delete Script"
+      },
+      {
+        "command": "atomexplorer.atomMove",
+        "title": "Move Script"
+      },
+      {
+        "command": "atomexplorer.atomRename",
+        "title": "Rename Script"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "atomexplorer.atomCreate",
+          "when": "view == atomExplorerView",
+          "group": "navigation"
+        },
+        {
+          "command": "atomexplorer.atomDelete",
+          "when": "view == atomExplorerView",
+          "group": "navigation"
+        },
+        {
+          "command": "atomexplorer.atomRename",
+          "when": "view == atomExplorerView",
+          "group": "navigation"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "atomexplorer.atomRefresh",
+          "when": "view == atomExplorerView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "atomExplorer",
+          "title": "Atom Explorer",
+          "icon": "resources/BarIcon.svg"
+        }
+      ]
+    },
+    "views": {
+      "atomExplorer": [
+        {
+          "id": "atomExplorerView",
+          "name": "Atom Explorer"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/rimraf": "^3.0.2",
+    "@types/vscode": "^1.72.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "@vscode/test-electron": "^2.0.3",
+    "eslint": "^8.6.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}
