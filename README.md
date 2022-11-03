@@ -6,21 +6,21 @@ Currently, the `Atom Explorer: Initialize` command does not work. You can instea
 If the explorer is empty, click `⟳ Refresh` on the top bar.
 
 ## Structure
-  | ``Framework``: Where all the scripts that handle the framework are
-  | ``Packages`` Where all the dependencies are
-  | ``src``: Where all the user-made scripts are
-    | ``Client``: Client sided scripts
-    | ``Server``: Client sided scripts
-    | ``Components``: Lists of components used by ECS
-    | ``Remotes``: List of RemoteEvents and RemoteFunctions
-    | ``Systems``: Where all the ECS systems are
-      | ``Server``: Server-sided systems
-      | ``Client``: Client-sided systems
-      | ``Shared``: Systems ran by both client and server
-    | ``Modules``: Where all the ECS systems are
-      | ``Server``: Server-sided modules
-      | ``Client``: Client-sided modules
-      | ``Shared``: Modules ran by both client and server
+- ``Framework``: Where all the scripts that handle the framework are
+- ``Packages`` Where all the dependencies are
+- ``src``: Where all the user-made scripts are
+  - ``Client``: Client sided scripts
+  - ``Server``: Client sided scripts
+  - ``Components``: Lists of components used by ECS
+  - ``Remotes``: List of RemoteEvents and RemoteFunctions
+  - ``Systems``: Where all the ECS systems are
+    - ``Server``: Server-sided systems
+    - ``Client``: Client-sided systems
+    - ``Shared``: Systems ran by both client and server
+  - ``Modules``: Where all the ECS systems are
+    - ``Server``: Server-sided modules
+    - ``Client``: Client-sided modules
+    - ``Shared``: Modules ran by both client and server
 
 ## Future updates
 - Initialize command
